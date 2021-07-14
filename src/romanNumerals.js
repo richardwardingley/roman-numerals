@@ -5,12 +5,17 @@ const toRoman = (number) => {
     let hundredsNumerals = ['C','CC','CCC','CD','D','DC','DCC','DCCC','CM'];
     let thousandsNumerals = ['M','MM','MMM'];
 
+    if (number === 0) {
+        console.log('Nulla');
+        return 'Nulla';
+    }
+
     let numeralTranslation = unitsNumerals[number-1];
     
     console.log(`${number} = ${numeralTranslation}`);
     return numeralTranslation;
 }
 
-toRoman(0);
+toRoman(8);
 
 module.exports = toRoman;
