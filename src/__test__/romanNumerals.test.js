@@ -4,6 +4,10 @@ const fromRoman = require('../romanNumerals');
 
 describe("From numbers to roman numerals function", () => {
 
+    it('should return Nulla if number = 0', () => {
+        expect(toRoman('0')).toEqual('Nulla');
+    });
+
     it('should convert number 1 to I', () => {
         expect(toRoman('1')).toEqual('I');
     });
