@@ -1,5 +1,5 @@
 - split the number up into individual numbers
-- read from right to left, units, tens, hundreds, thousands
+- reversed order
   OR number.length, 1 = units, 2 = tens, 3= hundreds, 4 = thousands,
   get that number and take off the first number each time
 - translate the given individual numbers into roman numerals based on the correct arrays
