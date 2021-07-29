@@ -7,7 +7,8 @@ const toRoman = (number) => {
 
     if (number === 0) {
         console.log('0 = Nulla');
-        return 'Nulla';
+        //let nulla = "Nulla";
+        return "Nulla";
     }
 
     let strDigits = number.toString().split(''); //.reverse()
@@ -60,6 +61,14 @@ const toRoman = (number) => {
     return finalTranslation;
 }
 
-toRoman(800);
+
+
+const fromRoman = (romanNumeral) => {
+
+}
+
+//toRoman(320);
+fromRoman(XIV);
 
 module.exports = toRoman;
+module.exports = fromRoman;
