@@ -1,5 +1,4 @@
-const toRoman = require('../romanNumerals');
-const fromRoman = require('../romanNumerals');
+const {toRoman, fromRoman} = require('../romanNumerals');
 
 
 describe("From numbers to roman numerals function", () => {
@@ -130,5 +129,15 @@ describe("From roman numerals to numbers function", () => {
         expect(fromRoman('XC')).toEqual(90);
     });
 
+    it('should convert roman numerals with smaller numbers before and after larger ones', () => {
+        expect(fromRoman('MCMXIV')).toEqual(1914);
+    });
+
+
+    it ('fromRoman and toRoman are consistent with each other', () => {
+        for (let i=1; i < 4000; i++) {
+            expect(fromRoman(toRoman(i))).toEqual(i);
+        }
+    });
 
 });
