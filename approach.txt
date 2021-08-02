@@ -13,3 +13,5 @@ From roman numeral to number:
 fromRoman(romanNumeral);
 
 - romanNumeral to upper case
+- split to individual letters into array
+

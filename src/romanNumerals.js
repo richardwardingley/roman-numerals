@@ -65,10 +65,57 @@ const toRoman = (number) => {
 
 const fromRoman = (romanNumeral) => {
 
+    const numberMap = {
+        M:1000, D:500, C:100, L:50, X:10, V:5, I:1
+    };
+
+    // console.log(romNum);
+    // return romNum
+    // let addNumsArr = [romanNumeral.split('')];
+    // for (let givenNumeral = 0; givenNumeral < romanNumeral.length; givenNumeral++){
+    //     let romNum = numberMap[romanNumeral];
+    //     addNumsArr.push(romNum);
+    //     console.log(addNumsArr);
+    //}
+
+    // let addNumsArr = [romanNumeral.split('')];
+    // for (let givenNumeral = 0; givenNumeral < romanNumeral.length; givenNumeral++){
+    //     addNumsArr = addNumsArr.push() + numberMap[romanNumeral];
+    //     console.log(addNumsArr);
+    // }
+
+        let numsAdded = 0;
+        for (let i = 0; i < romanNumeral.length; i++) {
+            if (romanNumeral[i] === "I" && romanNumeral[i + 1] === "V") {
+                numsAdded += 4;
+                i++;
+            } else if (romanNumeral[i] === "I" && romanNumeral[i + 1] === "X") {
+                numsAdded += 9;
+                i++;
+            } else if (romanNumeral[i] === "X" && romanNumeral[i + 1] === "L") {
+                numsAdded += 40;
+                i++;
+            } else if (romanNumeral[i] === "X" && romanNumeral[i + 1] === "C") {
+                numsAdded += 90;
+                i++;
+            } else if (romanNumeral[i] === "C" && romanNumeral[i + 1] === "D") {
+                numsAdded += 400;
+                i++;
+            } else if (romanNumeral[i] === "C" && romanNumeral[i + 1] === "M") {
+                numsAdded += 900;
+                i++;
+            } else {
+                numsAdded += numberMap[romanNumeral[i]];
+            }
+        }
+        console.log(numsAdded);
+        return numsAdded;
+
+
 }
 
 //toRoman(320);
-fromRoman(XIV);
+fromRoman('MCM'); //1989
 
 module.exports = toRoman;
 module.exports = fromRoman;
